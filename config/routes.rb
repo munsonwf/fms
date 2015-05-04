@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # route 'welcome#index'
+  get 'users/new'
+
   resources :case_files
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
