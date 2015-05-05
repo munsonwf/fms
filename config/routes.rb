@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # route 'welcome#index'
-  get 'users/new'
+  root 'home#index'
+
+
+  get 'signup' => 'users#new'
 
   resources :case_files
   # The priority is based upon order of creation: first created -> highest priority.
