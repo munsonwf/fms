@@ -19,6 +19,10 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save 
+      attr_accessor :remember_token, :activation_token
+      @user.send_activation_email
+      before_save   :downcase_email
+      before_create :create_activation_digest
       log_in @user
   		flash[:success] = "Welcome to FMS!"
   		redirect_to @user
